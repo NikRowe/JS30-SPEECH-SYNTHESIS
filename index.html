@@ -48,15 +48,15 @@
           `<option value="${voice.name}"class="option">${voice.name} (${voice.lang})</option>
         `)
         .join('');
+      // My Bonus Piece: get the drop down objects instead of the the voices Array so that we can then go through them and look for the value/name we want and add the selected property // 
       const voiceOptions = voicesDropdown.querySelectorAll('.option')
       voiceOptions.forEach(voice =>
         voice.value === 'Google UK English Male'
           ? voice.selected = 'selected'
           : ''
       )
-
-
     }
+
 
     function setVoice() {
       msg.voice = voices.find(voice => voice.name === this.value)
